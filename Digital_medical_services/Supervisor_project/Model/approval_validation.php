@@ -23,7 +23,6 @@ $rows = showvacancy();
 	<tbody>
 		<?php foreach ($rows as $i => $row): ?>
 			<tr>
-				<!-- <td><?php// echo $row['name'] ?></a></td> -->
 				<td><?php echo $row['Hospital_name'] ?></td>
 				<td><?php echo $row['Hospital_address'] ?></td>
 				<td><?php echo $row['Hospital_availability'] ?></td>
@@ -34,10 +33,9 @@ $rows = showvacancy();
 				<td><?php echo $row['booking_date'] ?></td>
 				<td><?php echo $row['phone_number'] ?></td>
 				<td>pending</td>
-				<!-- <td><img width="100px" src="uploads/<?php //echo $row['image'] ?>" alt="<?php //echo $row['name'] ?>"></td> -->
 				<td>
-					<!-- <a href="editStudent.php?id=<?php// echo $row['ID'] ?>">Edit</a> -->
-					<!-- &nbsp -->
+				<a href="Controller/adduser_in_approved_database.php?id=<?php echo $row['vacancies_id'] ?>">Accept</a>
+					&nbsp
 					<a href="Controller/delete.php?id=<?php echo $row['vacancies_id'] ?>" onclick="return confirm('Are you sure want to delete this ?')">Delete</a> 
 				</td>
 			</tr>

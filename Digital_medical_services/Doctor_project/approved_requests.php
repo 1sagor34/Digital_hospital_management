@@ -1,13 +1,6 @@
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// --> -->
 <?php  
 require_once 'Model/model.php';
 $rows = show_approved_appointments();
-
-
- //   include "nav.php";
-
-
-
 ?>
 <html>
 <head>
@@ -65,6 +58,9 @@ else{header("location:Login.php");}
 				<td><?php echo $row['visiting_hospital'] ?></td>
 				<td><?php echo $row['catagory'] ?></td>
                        <td><?php echo "yes" ?></td>
+					   <td>
+					 <a href="Controller/delete_approved.php?id=<?php echo $row['approvedid'] ?>" onclick="return confirm('Are you sure want to delete this ?')">Delete</a> 
+					</td>
                </tr>
 		<?php endforeach; ?>
 		

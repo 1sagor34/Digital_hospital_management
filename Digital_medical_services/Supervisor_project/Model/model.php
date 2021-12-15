@@ -176,4 +176,18 @@ function deleteuser($id){
     return true;
 }
 
+function exchangedata($id){
+	$conn = db_conn();
+	$selectQuery = "SELECT * FROM `hospital_vacancies` where `vacancies_id` = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $data;
+}
+
 ?>

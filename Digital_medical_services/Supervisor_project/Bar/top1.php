@@ -24,7 +24,8 @@
       <p class="nav-link"><?php echo "Logged in as ".$_SESSION['susername']."||"; ?></p>
       <a class="nav-link" href="welcome.php"><i class="fas fa-home"></i>Home</a>
       <a class="nav-link" href="viewProfile.php"><i class="fas fa-id-badge"></i>View Profile</a>
-      <a class="nav-link" href="search_User_name.php"><i class="fas fa-id-badge"></i>Search</a>
+      <a class="nav-link" href="search_User_name.php"><i class="fas fa-id-badge"></i>Search Doctor</a>
+      <a class="nav-link" href="search_User_name_patient.php"><i class="fas fa-id-badge"></i>Search Patient</a>
       <a class="nav-link" href="Patient_booking.php"><i class="fas fa-id-badge"></i>Patient Booking Request</a> 
       <a class="nav-link" href="Controller/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
     </div>

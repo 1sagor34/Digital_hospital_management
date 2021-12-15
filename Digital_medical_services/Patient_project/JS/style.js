@@ -1,4 +1,4 @@
-+
+
 function checkEmail()
 {
     if (document.getElementById("Pemail").value == "") 
@@ -8,7 +8,7 @@ function checkEmail()
 		document.getElementById("Pemail").style.borderColor = "red";
 	}
 	
-	else if(document.form.hemail.value.indexOf("@")<1||document.form.hemail.value.indexOf("@")+2>document.form.hemail.value.lastIndexOf(".")||document.form.hemail.value.lastIndexOf(".")+2>=document.form.hemail.value.length)
+	else if(document.form.Pemail.value.indexOf("@")<1||document.form.Pemail.value.indexOf("@")+2>document.form.Pemail.value.lastIndexOf(".")||document.form.Pemail.value.lastIndexOf(".")+2>=document.form.Pemail.value.length)
     {
         document.getElementById("PemailErr").innerHTML = "Invalid Email Format";
         document.getElementById("PemailErr").style.color = "red";
@@ -132,22 +132,22 @@ function checkgender()
 
 function checkPhoneNumber()
 {
-    if (document.getElementById("Pphone").value == "") 
+    if (document.getElementById("Pmobile_number").value == "") 
     {
-		document.getElementById("PphoneErr").innerHTML = "Mobile Number Required";
-		document.getElementById("PphoneErr").style.color = "red";
-		document.getElementById("Pphone").style.borderColor = "red";
+		document.getElementById("Pmobile_numberErr").innerHTML = "Mobile Number Required";
+		document.getElementById("Pmobile_numberErr").style.color = "red";
+		document.getElementById("Pmobile_number").style.borderColor = "red";
 	}
-	else if(document.getElementById("Pphone").value.length<11)
+	else if(document.getElementById("Pmobile_number").value.length<11)
 	{
-		document.getElementById("PphoneErr").innerHTML = "Must Be Atleast 11 Numbers";
-		document.getElementById("PphoneErr").style.color = "red";
-		document.getElementById("Pphone").style.borderColor = "red";
+		document.getElementById("Pmobile_numberErr").innerHTML = "Must Be Atleast 11 Numbers";
+		document.getElementById("Pmobile_numberErr").style.color = "red";
+		document.getElementById("Pmobile_number").style.borderColor = "red";
 	}
 	else
 	{
-		document.getElementById("Pphone").innerHTML = "";
-		document.getElementById("Pphone").style.borderColor = "black";
+		document.getElementById("Pmobile_number").innerHTML = "";
+		document.getElementById("Pmobile_number").style.borderColor = "black";
 	}
 }
 

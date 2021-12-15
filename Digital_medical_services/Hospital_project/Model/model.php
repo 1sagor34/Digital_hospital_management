@@ -140,4 +140,30 @@ function exchangedata($id){
 
     return $data;
 }
+function show_approved_bookings(){
+	$conn = db_conn();
+    $selectQuery = 'SELECT * FROM `approved_bookings` ';
+    try{
+        $stmt = $conn->query($selectQuery);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
+
+function delete_approved_user($id){
+	$conn = db_conn();
+    echo $id;
+    $selectQuery = "DELETE FROM `approved_bookings` WHERE `bookings_id` = ?";
+    try{
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
 ?>

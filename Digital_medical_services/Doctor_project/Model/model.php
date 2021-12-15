@@ -318,6 +318,22 @@ function deleteuser($id){
 
 
 
+function delete_approved_user($id){
+	$conn = db_conn();
+    echo $id;
+    $selectQuery = "DELETE FROM `approved_appointments` WHERE `approvedid` = ?";
+    try{
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
+
+
 
 
 

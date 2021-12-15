@@ -25,7 +25,9 @@ if (exchangedata($_GET['id'])) {
 
 
   if (add_appointment_Data_approved($data)) {
+	deleteuser($_GET['id']);
 	header('Location: ../Patient_booking.php');
+	
   	//echo 'Successfully added!!';
   }
 } else {

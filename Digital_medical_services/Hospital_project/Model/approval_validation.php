@@ -39,7 +39,7 @@ $rows = showvacancy();
 					<a href="Controller/delete.php?id=<?php echo $row['vacancies_id'] ?>" onclick="return confirm('Are you sure want to delete this ?')">Delete</a> 
 				</td>
 			</tr>
-			<br><br>
+			
 		<?php endforeach; ?>
 	</tbody>
 </table>

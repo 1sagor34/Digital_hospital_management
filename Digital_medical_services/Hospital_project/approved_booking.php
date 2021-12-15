@@ -1,3 +1,8 @@
+<?php  
+require_once 'Model/model.php';
+$rows = show_approved_bookings();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,23 +19,45 @@
 
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-<body>   
+<body>
 <table>
 	<thead>
 		<tr>
-		    <th>Hospital_name</th>         
-            <th>Hospital_address</th> 
-            <th>Hospital_availability</th>  
-            <th>Hospital_seat</th>     
-            <th>Hospital_vacancies</th> 
-			<th>User_name</th> 
-			<th>Booked_seats</th> 
-			<th>Booking_date</th>
-			<th>Phone_number</th> 
-            <th>Approval</th>  
+		                        <th>Hospital_name</th>         
+                               <th>Hospital_address</th> 
+                               <th>Hospital_availability</th>  
+                               <th>Hospital_seat</th>     
+                               <th>Hospital_vacancies</th> 
+							   <th>User_name</th> 
+							   <th>Booked_seats</th> 
+							   <th>Booking_date</th>
+							   <th>Phone_number</th> 
+                                <th>Approval</th>  
+								<th>Status</th> 
 		</tr>
-	</thead> 
-<?php 
+	</thead>
+	<tbody>
+		<?php foreach ($rows as $i => $row): ?>
+			<tr>
+				<td><?php echo $row['Hospital_name'] ?></td>
+				<td><?php echo $row['Hospital_address'] ?></td>
+				<td><?php echo $row['Hospital_availability'] ?></td>
+				<td><?php echo $row['Hospital_seat'] ?></td>
+				<td><?php echo $row['Hospital_vacancies'] ?></td>
+				<td><?php echo $row['user_name'] ?></td>
+				<td><?php echo $row['booked_seats'] ?></td>
+				<td><?php echo $row['booking_date'] ?></td>
+				<td><?php echo $row['phone_number'] ?></td>
+				<td><?php echo "yes" ?></td>
+					   <td>
+					 <a href="Controller/delete_approved.php?id=<?php echo $row['bookings_id'] ?>" onclick="return confirm('Are you sure want to delete this ?')">Delete</a> 
+					</td>
+			</tr>
+			<br><br>
+		<?php endforeach; ?>
+	</tbody>
+
+<?php
 session_start();
 if (isset($_SESSION['husername']) ){require 'Bar/top1.php';}
 else{header("location:Login.php");}
